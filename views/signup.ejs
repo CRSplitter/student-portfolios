@@ -1,0 +1,21 @@
+<% include _header %>
+    <h1>Sign up</h1>
+    <form action="/signup" enctype="multipart/form-data" method="post">
+      <h3>Username</h3>
+        <input name="username" type="text" class="form-control" placeholder="Username" required autofocus>
+      <h3>Password</h3>
+        <input name="password" type="password" class="form-control" placeholder="Password" required>
+      <h3>About me</h3>
+        <textarea name="description" type="text" class="form-control" rows="4" cols="40" autofocus=""></textarea>
+        <br>
+        <h3>Profile Picture</h3>
+        <input type="file" name="profile_picture">
+        <br>
+
+        <input type="submit" value="Sign up" class="btn btn-primary btn-block">
+
+
+
+
+    </form>
+<% include _footer %>

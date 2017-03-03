@@ -1,0 +1,9 @@
+<% include _header %>
+<h1>Edit your profile</h1>
+<form action="/edit" enctype="multipart/form-data" method="post">
+<input name="displayName" type="text" class="form-control" placeholder="Display name" value="<%= currentUser.displayName || "" %>">
+<textarea name="description" class="form-control" placeholder="Tell us about yourself!"> <%= currentUser.description || "" %></textarea>
+<input type="file" name="upl">
+<input type="submit" value="Update" class="btn btn-primary btn-block">
+</form>
+<% include _footer %>

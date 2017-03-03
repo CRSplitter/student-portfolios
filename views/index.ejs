@@ -1,0 +1,70 @@
+<% include _header %>
+<h1>Welcome Student Portfolios!</h1>
+<div class="container">
+  <% users.forEach(function(user)
+   { %>
+  <div class="panel panel-default">
+  <div class="panel-heading">
+  <a href="/users/<%= user.username %>" >
+  <h4><%= user.name() %></h4>
+
+  </a>
+  </div>
+  <% if (user.description) { %>
+    <div class="row">
+      <div class="col-sm-2">
+
+          <div class="panel-body">
+            <img src="/uploads/<%= user.profile_picture %>" style="width:70%" alt="" />
+            <br>
+            <hr>
+            <%= user.description %>
+          </div>
+
+      </div>
+      <% if (user.portfolio.length) { %>
+
+        <div class="col-sm-5">
+          <div class="" style="font-size:initial; font-weight:bold;">
+            <h4> Project name: <%= user.portfolio[0].project_name %></h4>
+          </div>
+          <br>
+          <div class="">
+            <Strong> Description
+              <br>
+              <%= user.portfolio[0].description %></Strong>
+          </div>
+          <br>
+
+        </div>
+
+        <% if (user.portfolio.length > 1) { %>
+          <div class="col-sm-5">
+            <div class="" style="font-size:initial; font-weight:bold;">
+              <h4> Project name: <%= user.portfolio[1].project_name %></h4>
+            </div>
+            <br>
+            <div class="">
+              <strong>Description: <%= user.portfolio[1].description %></strong>
+
+            </div>
+            <br>
+
+          </div>
+
+        <% } %>
+        <br>
+        <br>
+
+
+      <% } %>
+
+
+    </div>
+  <% } %>
+  </div>
+  <% }) %>
+
+</div>
+
+<% include _footer %>

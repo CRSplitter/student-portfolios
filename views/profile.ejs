@@ -1,0 +1,83 @@
+<% include _header %>
+<% if ((currentUser) && (currentUser.id === user.id)) { %>
+<a href="/edit" class="pull-right">Edit your profile</a>
+<% } %>
+<h1><%= user.username %></h1>
+
+
+<h3>Joined on <%= user.createdAt %></h2>
+
+ <img src="/uploads/<%= user.profile_picture %>" style="width:30%" alt="" />
+
+<% if (user.description) { %>
+  <h2>About me</h2>
+  <div class="panel panel-default">
+    <div class="panel-body"><%= user.description %></div>
+  </div>
+<% } %>
+
+<h2>Portfolio</h2>
+<% if (projects) { %>
+<% projects.forEach( function(project) { %>
+
+
+  <div class="panel panel-default">
+
+    <div class="panel-body">
+      <h4>Project name</h4>
+      <hr>
+      <%= project.project_name %>
+      <br>
+      <br>
+      <h4>Project Description</h4>
+      <hr>
+      <% if (project.description) { %>
+        <%= project.description %>
+      <% } %>
+
+      <br>
+      <br>
+      <h4>Screenshots</h4>
+      <hr>
+
+      <img src="/uploads/<%= project.screenshots[0] %>" style="width: 50%" alt="" />
+
+      <br>
+      <br>
+
+      <img src="/uploads/<%= project.screenshots[0] %>" style="width: 50%" alt="" />
+      <br>
+      <br>
+      <h4>Links!</h4>
+      <hr>
+      <a href="<%= project.links[0] %>"><%= project.links[0] %></a>
+      <br>
+      <a href="<%= project.links[1] %>"><%= project.links[1] %></a>
+      <br>
+      <a href="<%= project.links[2] %>"><%= project.links[2] %></a>
+    </div>
+
+  </div>
+
+
+
+
+
+<% }); %>
+
+
+<% } %>
+
+
+<a href="/addproject">
+
+  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+    Add project to my Portfolio!
+  </button>
+
+</a>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="/js/my.js"></script>
+
+<% include _footer %>

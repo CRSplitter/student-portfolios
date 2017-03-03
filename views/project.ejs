@@ -1,0 +1,23 @@
+<% include _header %>
+<form action="/addproject" enctype="multipart/form-data" method="post">
+<h2>Add a project!</h2>
+<h3>Screenshots</h3>
+<label class="btn btn-primary"> Choose file... <input type="file" name='photos' style="display: none;"></label>
+<br>
+<br>
+<label class="btn btn-primary"> Choose file... <input type="file" name='photos' style="display: none;"></label>
+<h3>Project name</h3>
+<input type="text" class="form-control" name="project_name" value="">
+<h3>Add a brief description</h3>
+<input type="text" class="form-control" name="description" value="">
+<h3>Links!</h3>
+<input type="text" class="form-control" name="link1" value="">
+<br>
+<input type="text" class="form-control" name="link2" value="">
+<br>
+<input type="text" class="form-control" name="link3" value="">
+<br>
+<input type="submit" value="Add!" class="btn btn-primary btn-block">
+</form>
+
+<% include _footer %>
