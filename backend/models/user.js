@@ -17,7 +17,6 @@ var userSchema = Schema({
 });
 
 
-
 userSchema.methods.name = function() {
 return this.displayName || this.username;
 };
